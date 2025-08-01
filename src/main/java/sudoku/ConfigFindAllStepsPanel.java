@@ -696,15 +696,17 @@ public class ConfigFindAllStepsPanel extends javax.swing.JPanel {
 			if (steps[i].getType() == SolutionType.BRUTE_FORCE) {
 				continue;
 			}
-			@SuppressWarnings("unchecked")
-			Enumeration<CheckNode> en = (Enumeration<CheckNode>) root.children();
+			Enumeration<?> en = root.children();
 			CheckNode act = null;
 			while (en.hasMoreElements()) {
-				act = en.nextElement();
-				if (act.getCategory() == steps[i].getCategory()) {
-					break;
-				}
-				act = null;
+			    Object obj = en.nextElement();
+			    if (obj instanceof CheckNode) {
+			        CheckNode node = (CheckNode) obj;
+			        if (node.getCategory() == steps[i].getCategory()) {
+			            act = node;
+			            break;
+			        }
+			    }
 			}
 			if (act == null) {
 				// neue Kategorie

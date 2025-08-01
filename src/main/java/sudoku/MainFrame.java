@@ -95,7 +95,6 @@ import javax.swing.event.CaretListener;
 import javax.swing.filechooser.FileFilter;
 import solver.SudokuSolver;
 import solver.SudokuSolverFactory;
-import sudoku.FileDrop;
 
 /**
  * @author hobiwan

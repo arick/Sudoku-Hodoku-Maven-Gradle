@@ -32,8 +32,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 
-import sudoku.MainFrame;
-
 public class UIQuickBrowse extends JFrame {
 
 	private static final long serialVersionUID = -983785287111188756L;

@@ -301,15 +301,17 @@ public class ConfigTrainigPanel extends javax.swing.JPanel {
 				// find a suitable puzzle)
 				continue;
 			}
-			@SuppressWarnings("unchecked")
-			Enumeration<CheckNode> en = (Enumeration<CheckNode>) root.children();
+			Enumeration<?> en = root.children();
 			CheckNode act = null;
 			while (en.hasMoreElements()) {
-				act = en.nextElement();
-				if (act.getCategory() == steps[i].getCategory()) {
-					break;
+				Object obj = en.nextElement();
+				if (obj instanceof CheckNode) {
+					act = (CheckNode) obj;
+					if (act.getCategory() == steps[i].getCategory()) {
+						break;
+					}
+					act = null;
 				}
-				act = null;
 			}
 			if (act == null) {
 				// neue Kategorie

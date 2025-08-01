@@ -372,7 +372,7 @@ public class ConfigProgressPanel extends javax.swing.JPanel implements ListDragA
 	}
 
 	/**
-	 * Sets all steps for SSTS (including the correct index). {@link SolutionTyp
+	 * Sets all steps for SSTS (including the correct index).
 	 * SolutionTypes} that cannot be set, are collected in {@link #invalidTypes}.
 	 */
 	private void setSSTS() {
@@ -610,16 +610,21 @@ public class ConfigProgressPanel extends javax.swing.JPanel implements ListDragA
 				// only steps with difficulty EASY - UNFAIR are allowed
 				continue;
 			}
-			@SuppressWarnings("unchecked")
-			Enumeration<CheckNode> en = (Enumeration<CheckNode>) root.children();
-			CheckNode act = null;
-			while (en.hasMoreElements()) {
-				act = en.nextElement();
-				if (act.getCategory() == steps[i].getCategory()) {
-					break;
-				}
-				act = null;
-			}
+			/* Sets all steps for SSTS (including the correct index). {@link SolutionType
+				 * SolutionTypes} that cannot be set, are collected in {@link #invalidTypes}.
+				 */
+			Enumeration<?> en = root.children();
+				 	CheckNode act = null;
+				 	while (en.hasMoreElements()) {
+				 		Object node = en.nextElement();
+				 		if (node instanceof CheckNode) {
+				 			CheckNode checkNode = (CheckNode) node;
+				 			if (checkNode.getCategory() == steps[i].getCategory()) {
+				 				act = checkNode;
+				 				break;
+				 			}
+				 		}
+				 	}
 			if (act == null) {
 				// neue Kategorie
 				act = new CheckNode(steps[i].getCategoryName(), true,

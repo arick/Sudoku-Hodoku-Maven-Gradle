@@ -28,8 +28,6 @@ import java.util.Map.Entry;
 import java.util.ResourceBundle;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JToggleButton;
 import javax.swing.event.TreeSelectionEvent;
@@ -38,6 +36,11 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+import static java.lang.System.getLogger;
 
 /**
  *
@@ -233,13 +236,15 @@ public final class AllStepsPanel extends javax.swing.JPanel implements TreeSelec
 		if (last != null) {
 			if (last.getUserObject() instanceof String) {
 				// Erstes Step-Kind holen
-				@SuppressWarnings("unchecked")
-				Enumeration<DefaultMutableTreeNode> children = (Enumeration<DefaultMutableTreeNode>) last.children();
+				Enumeration<?> children = last.children();
 				while (children.hasMoreElements()) {
-					DefaultMutableTreeNode act = children.nextElement();
-					if (act.getUserObject() instanceof SolutionStep) {
-						actStep = (SolutionStep) act.getUserObject();
-						break;
+					Object obj = children.nextElement();
+					if (obj instanceof DefaultMutableTreeNode) {
+						DefaultMutableTreeNode act = (DefaultMutableTreeNode) obj;
+						if (act.getUserObject() instanceof SolutionStep) {
+							actStep = (SolutionStep) act.getUserObject();
+							break;
+						}
 					}
 				}
 			} else {
@@ -374,6 +379,7 @@ public final class AllStepsPanel extends javax.swing.JPanel implements TreeSelec
 			createTreeNodesTypes(root);
 			break;
 		default:
+			Logger.getLogger(AllStepsPanel.class.getName()).log(Level.SEVERE, "Invalid sort mode (" + sortMode + ")");
 			Logger.getLogger(AllStepsPanel.class.getName()).log(Level.SEVERE, "Invalid sort mode ({0})", sortMode);
 			break;
 		}
@@ -866,10 +872,9 @@ public final class AllStepsPanel extends javax.swing.JPanel implements TreeSelec
 	 */
 	private int getTopLevelIndex(DefaultMutableTreeNode root, SolutionStep step) {
 		int index = 0;
-		@SuppressWarnings("unchecked")
-		Enumeration<DefaultMutableTreeNode> nodes = (Enumeration<DefaultMutableTreeNode>) root.children();
+		Enumeration<?> nodes = root.children();
 		while (nodes.hasMoreElements()) {
-			DefaultMutableTreeNode nextNode = nodes.nextElement();
+			DefaultMutableTreeNode nextNode = (DefaultMutableTreeNode) nodes.nextElement();
 			SolutionStep actStep = getStepFromNode(nextNode);
 			if (actStep.getCandidatesToDelete().size() < step.getCandidatesToDelete().size()) {
 				break;
@@ -884,12 +889,14 @@ public final class AllStepsPanel extends javax.swing.JPanel implements TreeSelec
 			return (SolutionStep) node.getUserObject();
 		} else if (node.getUserObject() instanceof String) {
 			// erstes Kind suchen, das ein SolutionStep ist
-			@SuppressWarnings("unchecked")
-			Enumeration<DefaultMutableTreeNode> nodes = (Enumeration<DefaultMutableTreeNode>) node.children();
+			Enumeration<?> nodes = node.children();
 			while (nodes.hasMoreElements()) {
-				DefaultMutableTreeNode nextNode = nodes.nextElement();
-				if (nextNode.getUserObject() instanceof SolutionStep) {
-					return (SolutionStep) nextNode.getUserObject();
+				Object next = nodes.nextElement();
+				if (next instanceof DefaultMutableTreeNode) {
+					DefaultMutableTreeNode nextNode = (DefaultMutableTreeNode) next;
+					if (nextNode.getUserObject() instanceof SolutionStep) {
+						return (SolutionStep) nextNode.getUserObject();
+					}
 				}
 			}
 		}
@@ -902,15 +909,7 @@ public final class AllStepsPanel extends javax.swing.JPanel implements TreeSelec
 		if (last != null) {
 			if (last.getUserObject() instanceof String) {
 				// Erstes Step-Kind anzeigen
-				@SuppressWarnings("unchecked")
-				Enumeration<DefaultMutableTreeNode> children = (Enumeration<DefaultMutableTreeNode>) last.children();
-				while (children.hasMoreElements()) {
-					DefaultMutableTreeNode act = children.nextElement();
-					if (act.getUserObject() instanceof SolutionStep) {
-						mainFrame.setSolutionStep((SolutionStep) act.getUserObject(), true);
-						break;
-					}
-				}
+				Enumeration<?> children = last.children();
 			} else {
 				mainFrame.setSolutionStep((SolutionStep) last.getUserObject(), true);
 			}
