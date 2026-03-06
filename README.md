@@ -123,7 +123,14 @@ java -Xmx512m --add-opens java.desktop/com.apple.laf=ALL-UNNAMED -jar target/hod
 
 ## Contributors
 
-- [arick](https://github.com/arick) — added Gradle build support, updated the Maven build, added macOS app bundle generation, and added MS Windows executable generation *(last commit: 2026-03-06)*
+- [arick](https://github.com/arick)
+  - added Gradle build support,
+  - updated the Maven build,
+  - updated the Java version,
+  - added macOS app bundle generation,
+  - added MS Windows executable generation,
+  - added Conda support,
+  - *(last commit: 2026-03-06)*
 - [johan974](https://github.com/johan974) — enabled the Maven build *(last commit: 2025-08-02)*
 - [PseudoFish](https://github.com/PseudoFish) — pulled in the last release notes and added production quality *(last commit: 2020-01-23)*
 - [yoki123](https://github.com/yoki123) — initial import from [hodoku.sourceforge.net](https://hodoku.sourceforge.net).  The actual code was imported from <https://svn.code.sf.net/p/hodoku/code/>. *(last commit: 2017-12-29)*
