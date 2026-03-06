@@ -1,12 +1,21 @@
 # HoDoKu
 
 Hodoku is a solver/generator/trainer/analyzer for standard sudoku. It is written in
-Java/Swing and should therefore run on any platform supported by Java (tested
-on Windows and Linux - Ubuntu/GTK+-LAF).
+Java/Swing and should therefore run on any platform supported by Java (tested on Windows, Mac and Linux - Ubuntu/GTK+-LAF).
 
 ![screenshot](https://raw.githubusercontent.com/PseudoFish/Hodoku/master/showcase/showcase.png)
 
 Available languages: English and German
+
+## In Memory of Bernhard Hobiger
+
+[HoDoKu](https://hodoku.sourceforge.net/) was created by [Bernhard Hobiger](https://sourceforge.net/u/hobiwan/profile/), who unfortunately passed away unexpectedly. Numerous people have attempted to continue his legacy — this fork is simply one of many. The latest update to this fork chain was significantly facilitated by [Claude.ai](https://claude.ai).
+
+There are several URLs that are associated with the original project:
+
+- [Examplary Sudoku Documentation](https://hodoku.sourceforge.net/)
+- [Original Source Code](https://sourceforge.net/p/hodoku/code/HEAD/tree/)
+- [SourceForge Site](https://sourceforge.net/projects/hodoku/)
 
 ## Building and Running
 
@@ -68,19 +77,9 @@ feature). The recommended way to run Hodoku with increased heap size is:
 java -Xmx512m --add-opens java.desktop/com.apple.laf=ALL-UNNAMED -jar target/hodoku-3.0.0.jar
 ```
 
-## In Memory of Bernhard Hobiger
-
-[HoDoKu](https://hodoku.sourceforge.net/) was created by [Bernhard Hobiger](https://sourceforge.net/u/hobiwan/profile/), who unfortunately passed away unexpectedly. Numerous people have attempted to continue his legacy — this fork is simply one of many. The latest update to this fork chain was significantly facilitated by [Claude.ai](https://claude.ai).
-
-There are several URLs that are associated with the original project:
-
-- [Examplary Sudoku Documentation](https://hodoku.sourceforge.net/)
-- [Original Source Code](https://sourceforge.net/p/hodoku/code/HEAD/tree/)
-- [SourceForge Site](https://sourceforge.net/projects/hodoku/)
-
 ## Contributors
 
-- [arick](https://github.com/arick) — updated the Maven build, added Gradle build support, and added macOS app bundle generation *(last commit: 2026-03-06)*
+- [arick](https://github.com/arick) — added Gradle build support, updated the Maven build, and added macOS app bundle generation *(last commit: 2026-03-06)*
 - [johan974](https://github.com/johan974) — enabled the Maven build *(last commit: 2025-08-02)*
 - [PseudoFish](https://github.com/PseudoFish) — pulled in the last release notes and added production quality *(last commit: 2020-01-23)*
 - [yoki123](https://github.com/yoki123) — initial import from [hodoku.sourceforge.net](https://hodoku.sourceforge.net).  The actual code was imported from <https://svn.code.sf.net/p/hodoku/code/>. *(last commit: 2017-12-29)*
@@ -90,18 +89,16 @@ There are several URLs that are associated with the original project:
 
 ### Version 3.0.0
 
--------------------
 
 [arick](https://github.com/arick) updated the Major version of the build, because when [PseudoFish](https://github.com/PseudoFish) forked the project from [yoki123](https://github.com/yoki123), they dropped all support for the original [Ant](https://ant.apache.org) features, which is a *breaking* change.
 
 - added support for doing a Gradle build,
 - updated the Maven build,
 - added macOS app bundle generation capability
-- Support for the original [Ant](https://ant.apache.org) features were actually dropped in version 2.3.0.
+- **NOTE:** Support for the original [Ant](https://ant.apache.org) features were actually dropped in version 2.3.0.
 
 ### Version 2.3.2 (WIP)
 
--------------------
 
 Minor:
 
@@ -115,8 +112,6 @@ Bug Fix:
 
 ### Version 2.3.1 (2020-01-13)
 
---------------------------
-
 Features:
 
 - Added Quick Browse in the File menu
@@ -127,8 +122,6 @@ Features:
   - Notes to the right of the import lines are ignored
 
 ### Version 2.3.0 (2020-01-10)
-
---------------------------
 
 Features:
 
@@ -150,8 +143,6 @@ Bug Fixes:
 
 ### Version 2.2.11 (2020-01-01)
 
----------------------------
-
 Features:
 
 - Toggle color visibility. Now you can hide colors without clearing it to see filtering/highlighting!
@@ -165,8 +156,6 @@ Bug Fix:
 - Fixed an infinite loop bug related to inputting digits on a multi solution puzzle.
 
 ### Version 2.2.10 (2019-12-24)
-
----------------------------
 
 Minor:
 
@@ -182,8 +171,6 @@ Bug Fix:
 - Clear variable state when resetting/loading new puzzles.
 
 ### Version 2.2.9 (2019-12-18)
-
---------------------------
 
 Features:
 
@@ -207,8 +194,6 @@ Bug Fixes:
 - Right click a user input cell shows the right click menu with the option to delete value.
 
 ### Version 2.2.8 (2019-12-01)
-
---------------------------
 
 Features:
 
@@ -235,8 +220,6 @@ Bug Fixes:
 
 ### Version 2.2.7 (2019-11-23)
 
---------------------------
-
 Features:
 
 - The active cell selector has been made larger then the rest of the cell selection to distinguish it.
@@ -255,8 +238,6 @@ Bug Fixes:
 
 ### Version 2.2.6 (2019-11-22)
 
---------------------------
-
 Features:
 
 - The cell selector now wraps around the board instead of getting stuck at the edge.
@@ -269,8 +250,6 @@ Bug Fixes:
 
 ### Version 2.2.5 (2019-11-17)
 
---------------------------
-
 Features:
 
 - Single Click Mode has replaced Alternative Mouse Mode from:
@@ -281,8 +260,6 @@ Features:
 
 ### Version 2.2.4 (2019-11-16)
 
---------------------------
-
 Features:
 
 - Mouse click and drag selects cells
@@ -290,8 +267,6 @@ Features:
 - Ctrl + Drag over existing selection toggled the selection
 
 ### Version 2.2.3 (2019-11-14)
-
---------------------------
 
 Features:
 
@@ -308,13 +283,9 @@ Bugs fixed:
 
 ### Version 2.2.2 (2019-11-10)
 
---------------------------
-
 - Added a "Solve Puzzle" option in the Puzzle menu.
 
 ### Version 2.2.1 (2019-11-07) Fork by PseudoFish
-
----------------------------------------------
 
 Features added:
 
@@ -329,8 +300,6 @@ Bugs fixed:
  no bug fixes
 
 ### Version 2.2 (2012-07-31)
-
---------------------------
 
 Features added:
 
@@ -376,8 +345,6 @@ Bugs fixed:
 
 ### Version 2.1.3 (2012-01-19)
 
---------------------------
-
 Features added:
 
   no features added
@@ -387,8 +354,6 @@ Bugs fixed:
 - #3475960: HoDoKu doesnt start when no default config file exists
 
 ### Version 2.1.2 (2012-01-16)
-
---------------------------
 
 Features added:
 
@@ -409,8 +374,6 @@ Bugs fixed:
 
 ### Version 2.1.1 (2011-10-23)
 
---------------------------
-
 Features added:
 
 - #3427511: If a single cell is selected, the cursor display disappears after 1 second (configurable)
@@ -423,8 +386,6 @@ Bugs fixed:
 - #3427510: When candidates are colored, they are not displayed correctly
 
 ### Version 2.1 (2011-10-20)
-
---------------------------
 
 Features added:
 
@@ -461,8 +422,6 @@ Bugs fixed:
 
 ### Version 2.0.1 (2010-04-14)
 
---------------------------
-
 Features added:
 
 - #2974069: Import of givens into an existing grid
@@ -473,8 +432,6 @@ Bugs fixed:
 - #2984538: XY-Chains not found
 
 ### Version 2.0 (2010-03-11)
-
-------------------------
 
 Features added:
 
@@ -506,8 +463,6 @@ Bugs fixed:
 
 ### Version 1.2.4 (2009-05-08)
 
-------------------------
-
 Features added:
 
 - #2772853: Use Ctrl-Cursor to go to next unsolved cell
@@ -522,8 +477,6 @@ Bugs fixed:
 - #2788798: Search for Franken/Mutant returns Basic Fish
 
 ### Version 1.2 (2009-04-04)
-
-------------------------
 
 Features added:
 
@@ -551,8 +504,6 @@ Bugs fixed:
 
 ### Version 1.1 (2009-03-03)
 
-------------------------
-
 Features added:
 
 - #2512895: Support for Kraken Fish added
@@ -575,8 +526,6 @@ Bugs fixed:
 - #2634176: AICs could overlap
 
 ### Version 1.0 (2009-01-29)
-
-------------------------
 
 Features added:
 
@@ -601,8 +550,6 @@ Bugs fixed:
 - #3510433: SummaryPanel errors
 
 ### Version 0.9.0 (2009-01-15)
-
---------------------------
 
 This is the first release of HoDoKu. No new features will be added before the release
 of ### Version 1.0. This release is extensively tested and should be stable.
