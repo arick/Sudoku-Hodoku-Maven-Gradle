@@ -55,9 +55,10 @@ class FishSolverTest {
         sudoku.setSudoku(puzzle, true);
         SudokuStepFinder sudokuStepFinder = new SudokuStepFinder(false);
         sudokuStepFinder.setSudoku(sudoku);
+        sudokuStepFinder.getStep(X_WING); // triggers initialization of internal data structures
         FishSolver solver = new FishSolver(sudokuStepFinder);
-        SolutionStep step = solver.getStep( null);
-        assertEquals(NAKED_PAIR, step.getType());
+        SolutionStep step = solver.getStep(X_WING);
+        assertEquals(X_WING, step.getType());
     }
 
 }

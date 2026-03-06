@@ -28,7 +28,7 @@ class SudokuSolverTest {
         Sudoku2 sudoku = new Sudoku2();
         sudoku.setSudoku(puzzle, true);
         SudokuSolver sudokuSolver = new SudokuSolver();
-        SolutionStep stepFound = sudokuSolver.solve( sudoku);
+        SolutionStep stepFound = sudokuSolver.getHint(sudoku, false);
         assertNotNull(stepFound, "Sudoku should be solved");
     }
 }
