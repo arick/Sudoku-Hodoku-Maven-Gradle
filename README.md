@@ -8,7 +8,7 @@ Available languages: English and German
 
 ## In Memory of Bernhard Hobiger
 
-[HoDoKu](https://hodoku.sourceforge.net/) was created by [Bernhard Hobiger](https://sourceforge.net/u/hobiwan/profile/), who unfortunately passed away unexpectedly.  Many people have attempted to continue his legacy — this fork is simply one of many. 
+[HoDoKu](https://hodoku.sourceforge.net/) was created by [Bernhard Hobiger](https://sourceforge.net/u/hobiwan/profile/), who unfortunately passed away unexpectedly.  Many people have attempted to continue his legacy — this fork is simply one of many.
 
 **Note:** The latest updates to this fork chain were significantly facilitated by [Claude.ai](https://claude.ai).
 
@@ -20,26 +20,27 @@ There are several URLs that are associated with the original project:
 
 ## Building and Running
 
+### Prerequisites
+
+- Java 17+ (JDK required for building)
+- Maven and/or Gradle
+
 ### Installing OpenJDK via Conda
 
-If you have [Conda](https://docs.conda.io/) installed, you can create an environment with OpenJDK, Maven, and Gradle using the included `environment.yml`.  This avoids the hassle that users experience, who are on company computers, and who do not have administrative permissions.
-
-Some sites where you can download Conda:
-- [Miniconda for Windows](https://www.anaconda.com/docs/getting-started/miniconda/install#windows-install), 
-- [macOS](https://www.anaconda.com/docs/getting-started/miniconda/install#macos-install), 
-- [Linux](https://www.anaconda.com/docs/getting-started/miniconda/install#linux-install)
-
-After downloading and installing Miniconda, then just run ...
+If you have [Conda](https://docs.conda.io/) installed, you can create an environment that contains OpenJDK, Maven, and Gradle, by using the included `environment.yml`.  This avoids the hassle that many users experience, who are on company computers, and who do not have administrative permissions.
 
 ```bash
 conda env create
 conda activate openjdk
 ```
 
-### Prerequisites
+#### Some sites where you can download Conda:
 
-- Java 17+ (JDK required for building)
-- Maven or Gradle
+- [Miniconda for Windows](https://www.anaconda.com/docs/getting-started/miniconda/install#windows-install),
+- [macOS](https://www.anaconda.com/docs/getting-started/miniconda/install#macos-install),
+- [Linux](https://www.anaconda.com/docs/getting-started/miniconda/install#linux-install)
+
+Install Miniconda in your user's directory space, and you won't have to worry about having the Administrator password.
 
 ### Maven
 
@@ -54,7 +55,9 @@ Run the application:
 ```bash
 ./Hodoku.sh
 ```
+
 or
+
 ```powershell
 .\Hodoku.ps1
 ```
