@@ -1,3 +1,10 @@
 bin/
 .settings/
 legacy/
+
+# Maven
+target/
+
+# Gradle
+build/
+.gradle/
