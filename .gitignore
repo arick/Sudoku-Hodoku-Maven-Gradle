@@ -8,3 +8,6 @@ target/
 # Gradle
 build/
 .gradle/
+
+# IDEs
+.vscode/
