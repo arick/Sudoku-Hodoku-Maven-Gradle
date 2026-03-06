@@ -1,4 +1,4 @@
-# HoDoKu
+﻿# HoDoKu
 
 Hodoku is a solver/generator/trainer/analyzer for standard Sudoku. It is written in Java/Swing and should therefore run on any platform supported by Java (tested on Windows, Mac and Linux - Ubuntu/GTK+-LAF).
 
@@ -40,7 +40,7 @@ Run the application:
 Or manually:
 
 ```bash
-java --add-opens java.desktop/com.apple.laf=ALL-UNNAMED -jar target/hodoku-3.0.0.jar
+java --add-opens java.desktop/com.apple.laf=ALL-UNNAMED -jar target/hodoku-3.1.0.jar
 ```
 
 ### Gradle
@@ -73,18 +73,25 @@ Hodoku uses rather a lot of memory (especially if you use the "Find all availabl
 feature). The recommended way to run Hodoku with increased heap size is:
 
 ```bash
-java -Xmx512m --add-opens java.desktop/com.apple.laf=ALL-UNNAMED -jar target/hodoku-3.0.0.jar
+java -Xmx512m --add-opens java.desktop/com.apple.laf=ALL-UNNAMED -jar target/hodoku-3.1.0.jar
 ```
 
 ## Contributors
 
-- [arick](https://github.com/arick) — added Gradle build support, updated the Maven build, and added macOS app bundle generation *(last commit: 2026-03-06)*
+- [arick](https://github.com/arick) — added Gradle build support, updated the Maven build, added macOS app bundle generation, and added MS Windows executable generation *(last commit: 2026-03-06)*
 - [johan974](https://github.com/johan974) — enabled the Maven build *(last commit: 2025-08-02)*
 - [PseudoFish](https://github.com/PseudoFish) — pulled in the last release notes and added production quality *(last commit: 2020-01-23)*
 - [yoki123](https://github.com/yoki123) — initial import from [hodoku.sourceforge.net](https://hodoku.sourceforge.net).  The actual code was imported from <https://svn.code.sf.net/p/hodoku/code/>. *(last commit: 2017-12-29)*
 - [hobiwan](https://sourceforge.net/u/hobiwan/profile/) — original developer of [HoDoKu](https://sourceforge.net/p/hodoku/) *(last commit: 2013-09-06)*
 
 ## Change log
+
+### Version 3.1.0
+
+[arick](https://github.com/arick) added support for generating an MS Windows executable.
+
+- added MS Windows app image generation capability via `jpackageWin` Gradle task
+- added `Hodoku.ps1` PowerShell launcher script for Windows
 
 ### Version 3.0.0
 
