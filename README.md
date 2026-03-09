@@ -1,10 +1,10 @@
 ﻿# HoDoKu
 
-Hodoku is a solver/generator/trainer/analyzer for standard Sudoku.  It is written in Java/Swing and should therefore run on any platform supported by Java (tested on Windows, Mac and Linux - Ubuntu/GTK+-LAF).
+Hodoku is a solver/generator/trainer/analyzer for standard Sudoku.  It is written in Java/Swing and should therefore run on any platform supported by Java.  The latest version has been tested on MS Windows, and Mac.  Historically, it has been also been tested on Linux - Ubuntu/GTK+-LAF.
 
 ![screenshot](https://raw.githubusercontent.com/PseudoFish/Hodoku/master/showcase/showcase.png)
 
-Available languages: English and German
+Available languages: English.  German - legacy support only
 
 ## In Memory of Bernhard Hobiger
 
@@ -70,6 +70,8 @@ java --add-opens java.desktop/com.apple.laf=ALL-UNNAMED -jar target/hodoku-3.1.0
 
 ### Gradle
 
+#### Self-Contained Fat JAR
+
 Build a self-contained fat JAR:
 
 ```bash
@@ -82,7 +84,7 @@ Build and launch directly:
 gradle run
 ```
 
-### macOS App Bundle
+#### macOS App Bundle
 
 To build a native macOS `.app` bundle (self-contained, no Java install required):
 
@@ -92,7 +94,7 @@ gradle jpackageApp
 
 The app is created at `build/dist/HoDoKu.app` and can be copied to `/Applications` or double-clicked directly.
 
-### MS Windows Executable
+#### MS Windows Executable
 
 To build a native Windows app image (self-contained, no Java install required):
 
